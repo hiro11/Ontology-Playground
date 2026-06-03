@@ -29,7 +29,7 @@ export function DataSourcesModal({ onClose }: DataSourcesModalProps) {
           <div>
             <h2 style={{ fontSize: 24, fontWeight: 600 }}>Data Sources</h2>
             <p style={{ fontSize: 14, color: 'var(--text-secondary)', marginTop: 4 }}>
-              How the Fourth Coffee ontology binds to OneLake
+              How the Fourth Coffee ontology binds to a Data Lakehouse
             </p>
           </div>
           <button className="icon-btn" onClick={onClose}>
@@ -37,7 +37,7 @@ export function DataSourcesModal({ onClose }: DataSourcesModalProps) {
           </button>
         </div>
 
-        {/* OneLake Overview */}
+        {/* Data lakehouse overview */}
         <div style={{ 
           padding: 20, 
           background: 'linear-gradient(135deg, rgba(0, 120, 212, 0.1), rgba(92, 45, 145, 0.1))',
@@ -59,9 +59,9 @@ export function DataSourcesModal({ onClose }: DataSourcesModalProps) {
             <Cloud size={28} color="white" />
           </div>
           <div>
-            <div style={{ fontSize: 18, fontWeight: 600, marginBottom: 4 }}>Microsoft OneLake</div>
+            <div style={{ fontSize: 18, fontWeight: 600, marginBottom: 4 }}>Data Lakehouse</div>
             <div style={{ fontSize: 13, color: 'var(--text-secondary)' }}>
-              Unified data lake for Microsoft Fabric. The ontology binds entity types to tables and semantic models stored here.
+              Unified storage layer for analytics. The ontology binds entity types to lakehouse tables and semantic models.
             </div>
           </div>
         </div>
@@ -73,7 +73,7 @@ export function DataSourcesModal({ onClose }: DataSourcesModalProps) {
             if (!entity) return null;
 
             const sourceNormalized = binding.source.toLowerCase();
-            const isLakehouse = sourceNormalized.includes('onelake') || binding.table.startsWith('lakehouse.');
+            const isLakehouse = sourceNormalized.includes('lakehouse') || binding.table.startsWith('lakehouse.');
             const isSemanticModel = sourceNormalized.includes('semantic') || binding.table.startsWith('semantic_model.');
 
             return (
@@ -166,7 +166,7 @@ export function DataSourcesModal({ onClose }: DataSourcesModalProps) {
             </div>
             <div style={{ fontSize: 12, color: 'var(--text-tertiary)' }}>
               In this demo, bindings are shown for Customer, Order, and Product. 
-              In a real deployment, all entities would be bound to OneLake sources.
+              In a real deployment, all entities would be bound to data platform sources.
             </div>
           </div>
         </div>

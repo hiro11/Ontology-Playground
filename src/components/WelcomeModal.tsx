@@ -54,7 +54,7 @@ export function WelcomeModal({ onClose }: WelcomeModalProps) {
             </div>
             <div className="feature-title">Data Bindings</div>
             <div className="feature-text">
-              Connect ontology concepts to real OneLake data sources
+              Connect ontology concepts to real data platform sources
             </div>
           </div>
 

@@ -69,7 +69,7 @@ export function HelpModal({ onClose }: HelpModalProps) {
               <span className="feature-title" style={{ marginBottom: 0 }}>View Data Bindings</span>
             </div>
             <p className="feature-text">
-              When you select an entity type, the inspector shows how ontology properties map to real data sources in OneLake, 
+              When you select an entity type, the inspector shows how ontology properties map to real data sources in a data lakehouse, 
               including lakehouse tables and semantic models.
             </p>
           </div>

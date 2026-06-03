@@ -170,7 +170,7 @@ export const quests: Quest[] = [
   {
     id: "quest-5",
     title: "Data Binding Discovery",
-    description: "Learn how ontology concepts connect to real data sources in OneLake.",
+    description: "Learn how ontology concepts connect to real data platform sources.",
     difficulty: "advanced",
     category: "exploration",
     steps: [

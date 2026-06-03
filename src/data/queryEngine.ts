@@ -113,7 +113,7 @@ export function processQuery(query: string, ontology: Ontology): QueryResponse {
   if (normalizedQuery.includes('how') && (normalizedQuery.includes('ontology') || normalizedQuery.includes('work'))) {
     return {
       query,
-      result: `The **${ontology.name}** ontology has:\n\n• **${entities.length} Entity Types** - ${entities.map(e => e.name).join(', ')}\n• **${relationships.length} Relationships** - Connecting entities together\n\nThe ontology acts as a semantic layer that binds to your OneLake data sources, enabling natural language queries that understand your business concepts.`,
+      result: `The **${ontology.name}** ontology has:\n\n• **${entities.length} Entity Types** - ${entities.map(e => e.name).join(', ')}\n• **${relationships.length} Relationships** - Connecting entities together\n\nThe ontology acts as a semantic layer that binds to your data platform sources, enabling natural language queries that understand your business concepts.`,
       highlightEntities: entities.map(e => e.id),
       highlightRelationships: [],
       interpretation: "Detected: question about ontology structure"
@@ -170,7 +170,7 @@ export function processQuery(query: string, ontology: Ontology): QueryResponse {
       
       return {
         query,
-        result: `**${entity.name}** ${entity.icon}\n${entity.description}\n\n**Properties:**\n${propList}\n\n_In a real deployment, this would query OneLake for actual ${entityNameLower} records._`,
+        result: `**${entity.name}** ${entity.icon}\n${entity.description}\n\n**Properties:**\n${propList}\n\n_In a real deployment, this would query the data platform for actual ${entityNameLower} records._`,
         highlightEntities: [entity.id],
         highlightRelationships: [],
         interpretation: `Detected: query for ${entity.name} entities`
@@ -248,7 +248,7 @@ export function processQuery(query: string, ontology: Ontology): QueryResponse {
       if (normalizedQuery.includes(entity.name.toLowerCase())) {
         return {
           query,
-          result: `The ontology defines the **${entity.name}** entity type.\n\n_In production, this query would count actual ${entity.name.toLowerCase()} records from OneLake._\n\nExample: "SELECT COUNT(*) FROM ${entity.name.toLowerCase()}s"`,
+          result: `The ontology defines the **${entity.name}** entity type.\n\n_In production, this query would count actual ${entity.name.toLowerCase()} records from the data platform._\n\nExample: "SELECT COUNT(*) FROM ${entity.name.toLowerCase()}s"`,
           highlightEntities: [entity.id],
           highlightRelationships: [],
           interpretation: `Detected: count query for ${entity.name}`

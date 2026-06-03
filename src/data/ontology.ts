@@ -241,11 +241,11 @@ export const sampleInstances: EntityInstance[] = [
   { id: "ship-001", entityTypeId: "shipment", values: { shipmentId: "SHIP-001", dispatchDate: "2025-01-20", arrivalDate: "2025-01-27", status: "Delivered", weight: 250.5 }},
 ];
 
-// Sample data bindings showing connection to OneLake
+// Sample data bindings showing connection to a data lakehouse platform
 export const sampleBindings: DataBinding[] = [
   {
     entityTypeId: "customer",
-    source: "OneLake",
+    source: "Data Lakehouse",
     table: "lakehouse.bronze.customers",
     columnMappings: {
       customerId: "customer_id",
@@ -258,7 +258,7 @@ export const sampleBindings: DataBinding[] = [
   },
   {
     entityTypeId: "order",
-    source: "OneLake",
+    source: "Data Lakehouse",
     table: "lakehouse.silver.orders",
     columnMappings: {
       orderId: "order_id",
