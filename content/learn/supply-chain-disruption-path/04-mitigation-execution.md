@@ -106,7 +106,7 @@ IF RiskAssessment.revenueAtRisk > $50M AND
         - Finance (forecast $2M additional cost)
         - CEO/Board (update on exposure)
      4. Create Activator alerts with escalation policy
-     5. Start monitoring MitigationAction.executedDate
+     5. Start monitoring MitigationAction.status
 ```
 
 ## Real-world workflow: End-to-end
@@ -143,7 +143,7 @@ IF RiskAssessment.revenueAtRisk > $50M AND
           ├─ Escalation policy notifies leadership
           ├─ Procurement team acknowledges + confirms receipt
           
-11:30 AM: MitigationAction.executedDate = "2024-05-01 11:30"
+11:30 AM: MitigationAction.status = "In Progress"
           ├─ Purchase order in progress
           ├─ ChipX Europe confirms 48-hour shipment
           ├─ Production impact reduced from 7 days → 3 days
@@ -160,7 +160,7 @@ Every 4 hours:
   - Recommend contingency actions if needed
   
 Day 3: ChipX Europe shipment received
-  ├─ MitigationAction status = "completed"
+  ├─ MitigationAction.status = "Completed"
   ├─ Inventory restored for 47 components
   ├─ Production resumes (3-day delay, not 7-day)
   ├─ Actual cost: $2.1M (estimated $2M)
@@ -179,7 +179,7 @@ Data Agent grounds query against your ontology:
   2. For each, find Components they supply
   3. Trace to ProductLines using those components
   4. Calculate revenueAtRisk for each ProductLine
-  5. Return ranked list with RiskScore
+  5. Return ranked list by revenueAtRisk
   
 Agent Response:
   "You have 3 critical single-source suppliers. 
@@ -219,8 +219,8 @@ Each disruption event becomes a training opportunity. Your agents learn which al
 
 Your Supply Chain Disruption & Risk Propagation ontology is production-ready:
 
-✅ **8 entity types** capture the full disruption lifecycle  
-✅ **40+ properties** provide rich context for decision-making  
+✅ **7 entity types** capture the full disruption lifecycle  
+✅ **40 properties** provide rich context for decision-making  
 ✅ **7 relationships** model realistic impact cascades  
 ✅ **Fabric IQ compatible** for natural-language agents  
 ✅ **Automation-ready** with enum classifications and timestamps  

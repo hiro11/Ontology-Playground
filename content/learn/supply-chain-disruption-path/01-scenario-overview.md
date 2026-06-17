@@ -53,8 +53,8 @@ Over four steps, we'll construct a production-grade ontology that powers this in
 | 3 | Relationships and cascade modeling | Impact propagation graph |
 | 4 | Risk assessment and mitigation actions | Decision automation |
 
-By the end, you'll have an 8-entity ontology with:
-- **40+ properties** capturing reliability scores, inventory levels, costs, timelines
+By the end, you'll have a 7-entity ontology with:
+- **40 properties** capturing reliability scores, inventory levels, costs, timelines
 - **7 relationships** modeling the disruption cascade
 - **Fabric IQ compatibility** for data agent grounding and real-time alerting
 

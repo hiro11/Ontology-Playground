@@ -1,11 +1,11 @@
 ---
 title: "Core Entities & Properties"
 slug: core-entities
-description: "Learn the 8 entity types and 40+ properties that model supply chain disruptions, from suppliers and components to risk assessments and mitigation actions."
+description: "Learn the 7 entity types and 40 properties that model supply chain disruptions, from suppliers and components to risk assessments and mitigation actions."
 order: 2
 ---
 
-## The 8 entity types
+## The 7 entity types
 
 Your ontology captures the full lifecycle of a supply chain disruption, from the triggering event through detection, assessment, and response.
 
@@ -18,12 +18,12 @@ Your ontology captures the full lifecycle of a supply chain disruption, from the
 
 **Component**
 - A part, material, or sub-assembly sourced from one or more suppliers
-- Key properties: `componentId`, `name`, `category` (Electronic/Mechanical/Chemical/Packaging/Raw Material), `daysOfSupplyOnHand`, `criticality` (Critical/High/Normal)
+- Key properties: `componentId`, `name`, `category` (Electronic/Mechanical/Chemical/Packaging/Raw Material), `daysOfSupplyOnHand`, `criticalityLevel` (Critical/High/Medium/Low)
 - Use case: Track which components can survive supplier interruptions based on safety stock
 
 **ProductLine**
 - A group of finished products sharing common components
-- Key properties: `productLineId`, `name`, `annualRevenue`, `monthlyDemandUnits`, `productionStatus` (Active/At Risk/Halted/Discontinued)
+- Key properties: `productLineId`, `name`, `annualRevenue`, `marketSegment`, `productionStatus` (Active/At Risk/Halted/Discontinued)
 - Use case: Calculate revenue exposure and production timeline impact
 
 ### Tier 2: The disruption
@@ -37,12 +37,12 @@ Your ontology captures the full lifecycle of a supply chain disruption, from the
 
 **RiskAssessment**
 - An analysis of business impact when a disruption affects the supply chain
-- Key properties: `assessmentId`, `assessedDate` (datetime), `revenueAtRisk` (USD), `timeToImpactDays`, `affectedProductCount`, `riskScore` (0-100)
+- Key properties: `assessmentId`, `assessedDate` (datetime), `revenueAtRisk` (USD), `timeToImpactDays`, `confidenceLevel` (High/Medium/Low), `recommendedAction`
 - Use case: Quantify impact in business terms (money and time) to prioritize response
 
 **MitigationAction**
 - A concrete step to reduce or eliminate disruption impact
-- Key properties: `actionId`, `actionType` (Use Alternative Supplier/Increase Safety Stock/Redesign/Substitute Component), `estimatedCost` (USD), `leadTimeSavedDays`, `executedDate` (optional)
+- Key properties: `actionId`, `type` (Activate Alternative Supplier/Increase Safety Stock/Redesign Component/Reduce Production/Expedite Shipment/Customer Communication), `status` (Proposed/Approved/In Progress/Completed/Cancelled), `estimatedCost` (USD), `leadTimeSavedDays`
 - Use case: Track which actions have been taken and their actual vs. estimated effectiveness
 
 ### Tier 4: The backup
